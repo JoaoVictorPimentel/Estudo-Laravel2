@@ -7,13 +7,19 @@ use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\SobreNosController;
 use App\Http\Controllers\TesteController;
 use App\Http\Controllers\FornecedorController;
+use App\Http\Middleware\LogAcessoMiddleware;
 
-Route::get('/', [PrincipalController::class, 'principal'])->name('site.index');
+Route::middleware(LogAcessoMiddleware::class)
+    ->get('/', [PrincipalController::class, 'principal'])
+    ->name('site.index');
 
 Route::get('/sobre-nos', [SobreNosController::class, 'sobreNos'])->name('site.sobrenos');
 
-Route::get('/contato', [ContatoController::class, 'contato'])->name('site.contato');
-Route::post('/contato', [ContatoController::class, 'contato'])->name('site.contato');
+Route::get('/contato', [ContatoController::class, 'contato'])
+    ->name('site.contato')
+    ->middleware(LogAcessoMiddleware::class);
+
+Route::post('/contato', [ContatoController::class, 'salvar'])->name('site.contato');
 
 Route::get('/login', function () {
     return 'login';
