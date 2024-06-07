@@ -166,6 +166,13 @@ button:hover {
     text-align: center;
 }
 
+.titulo-pagina-2 {
+    padding: 70px 0px 10px 0px;
+    margin-bottom: 10px;
+    background-color: #2a9ee2;
+    text-align: center;
+}
+
 .informacao-pagina {
     text-align: center;
     margin-top: 30px;
@@ -199,4 +206,13 @@ span {
 
 .redes-sociais img {
     margin: 0px 15px 0px 15px;
+}
+
+.pagination li{
+    display: inline;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.pagination ul{
+    list-style-type: none;
 }

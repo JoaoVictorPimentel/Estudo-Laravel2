@@ -14,7 +14,6 @@
 
     @yield('conteudo')
 
-    @include('app.layouts._partials.footer')
 </body>
 
 </html>
